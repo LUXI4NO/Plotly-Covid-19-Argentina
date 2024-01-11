@@ -10,10 +10,8 @@ with st.container():
     text_column,image_column = st.columns((3,2))
     with image_column:
         image = Image.open("img/vacuna.jpg")
-        st.image(image,width=700)
+        st.image(image, use_column_width=True)
 with text_column:
-    st.write("##")
-    st.write("##")
     st.write("##")
     st.write("##")
     st.write("##")
@@ -280,7 +278,7 @@ with st.container():
             title='Provincia con Más Tasa de incidencia de COVID-19 en Argentina',
             hover_data=['Tasa de incidencia'],
             labels={'Tasa de incidencia': 'Número de Tasa de incidencia'},
-            hole=0.4,
+            hole=0.5,
         )
 
         fig.update_traces(textposition='inside', textinfo='percent+label')
@@ -289,7 +287,7 @@ with st.container():
         fig.update_layout(
             width=800,
             height=500,
-            margin=dict(t=20, b=10),
+            margin=dict(t=40, b=60),
             showlegend=True,
             legend=dict(x=1, y=0.5),
         )
@@ -315,7 +313,7 @@ with st.container():
             title='Provincia con Más Letalidad de COVID-19 en Argentina',
             hover_data=['Letalidad'],
             labels={'Letalidad': 'Número de Letalidad'},
-            hole=0.4,
+            hole=0.5,
         )
 
         fig.update_traces(textposition='inside', textinfo='percent+label')
@@ -325,8 +323,9 @@ with st.container():
         fig.update_layout(
             width=800,
             height=500,
-            margin=dict(t=20, b=10),
-            legend=dict(x=0, y=0.5),  # Mover la leyenda al lado izquierdo
+            margin=dict(t=40, b=60),
+            legend=dict(x=1, y=0.5),
+
         )
 
         # Personalizar la paleta de colores
@@ -344,9 +343,9 @@ st.write("##")
 st.write("##")
 with st.container():
     st.markdown("<h1 style='text-align: center;'>Relación entre Tasa de Incidencia y Letalidad por Provincia en Argentina</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'> El gráfico de dispersión permite identificar patrones y tendencias entre estas dos métricas críticas. Cada punto en el gráfico representa una provincia, con el tamaño del marcador indicando la magnitud de la relación.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>La visualización presenta un gráfico de dispersión que analiza la relación entre la Tasa de Incidencia y la Letalidad por provincia en Argentina. Cada punto en el gráfico representa una provincia, donde el eje x representa la Tasa de Incidencia y el eje y representa la Letalidad. El tamaño de los marcadores indica la magnitud de la relación entre estas dos métricas críticas.</p>", unsafe_allow_html=True)
 
-    fig = px.scatter(df, x="Tasa de incidencia", y="Letalidad", text="Provincias", title="Relación entre Tasa de incidencia y Letalidad por Provincia",
+    fig = px.scatter(df, x="Tasa de incidencia", y="Letalidad", text="Provincias",
                     labels={"Tasa de incidencia": "Número de Tasa de incidencia", "Letalidad": "Número de Letalidad"},
                     hover_name="Provincias", color_discrete_sequence=["#A385FF"], size_max=50)
 
@@ -354,7 +353,7 @@ with st.container():
     fig.update_traces(marker=dict(size=12, line=dict(width=2, color='DarkSlateGray')),
                     textposition='top center', textfont_size=9)
 
-    fig.update_layout(title=dict(text='Relación entre Tasa de incidencia y Letalidad por Provincia', x=0.4),
+    fig.update_layout(
                     xaxis_title='Número de Tasa de incidencia',
                     yaxis_title='Número de Letalidad',
                     showlegend=False)
