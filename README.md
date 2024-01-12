@@ -1,6 +1,6 @@
 # Análisis de Datos del COVID-19 en Argentina
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://covid19insightsargentina.streamlit.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://argcovid.streamlit.app/)
 [![Python Version](https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
 ![image](https://github.com/LUXI4NO/Plotly-Covid-19-Argentina/assets/140111840/b64decfa-4bd9-48ac-b506-eeea919bebc8)
