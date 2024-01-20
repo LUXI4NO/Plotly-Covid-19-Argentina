@@ -362,27 +362,3 @@ with st.container():
 
     # Mostrar el gráfico en Streamlit
     st.plotly_chart(fig, use_container_width=True)
-
-
-st.write("---")
-with st.container():
-    text_column,image_column = st.columns((3,2))
-    with image_column:
-        image = Image.open("img/Mail sent-rafiki.png")
-        st.image(image, width=600)
-    with text_column:
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        # Pie de página
-        with st.container():
-            st.markdown("<h1 style='text-align: center;'>Contactame</h1>", unsafe_allow_html=True)
-
-            st.markdown("<h5 style='text-align: center;'>Email: <a href='mailto:AlvarezLucianoEzequiel@gmail.com'>AlvarezLucianoEzequiel@gmail.com</a></h5>", unsafe_allow_html=True)
-            st.markdown("<h5 style='text-align: center;'>LinkedIn: <a href='https://www.linkedin.com/in/luciano-alvarez-332843285/'>Luciano Alvarez</a></h5>", unsafe_allow_html=True)
-            st.markdown("<h5 style='text-align: center;'>GitHub: <a href='https://github.com/LUXI4NO'>Luciano Alvarez</a></h5>", unsafe_allow_html=True)
-
-
-            st.markdown("""
-                <p style='text-align: center;'>¡Gracias por visitar mi sitio! Espero poder ayudarte con tus datos.</p>
-            """, unsafe_allow_html=True)
